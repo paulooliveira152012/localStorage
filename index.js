@@ -32,7 +32,6 @@ function getItems(){
         }
         console.log(value)
     }
-    
 }
 
 
