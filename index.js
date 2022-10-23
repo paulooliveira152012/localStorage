@@ -28,10 +28,11 @@ function getItems(){
     
             info.push(value);
             //what to use as arguments for display and why?
-            display(value.fname, value.lname)
+            display(value.fname, value.value)
         }
         console.log(value)
     }
+    
 }
 
 
