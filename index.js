@@ -14,7 +14,7 @@ btn.addEventListener("click", function(e){
     for(var i = 0; i < info.length; i++){
         localStorage.setItem(i, JSON.stringify(info[i]))
     }
-        display(fnInput.value, lnInput.value)
+        display(fnInput.value, lnInput.value);
 
         fnInput.value = '';
         lnInput.value = '';
@@ -28,7 +28,7 @@ function getItems(){
     
             info.push(value);
             //what to use as arguments for display and why?
-            display(value.fname, value.value)
+            display(value.fName, value.lName)
         }
         console.log(value)
     }
