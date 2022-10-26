@@ -38,21 +38,22 @@ function getItems(){
 function display(fname, lname) {
     
     var infobox = document.createElement('div');
+    infobox.style.display="flex";
     
 
     var displayFName = document.createElement('h3');
     displayFName.textContent = fname;
-    displayFName.style.float = "left";
+    displayFName.style.display = "inline";
     infobox.appendChild(displayFName);
 
 
     var displayLName = document.createElement('h3');
     displayLName.textContent = lname;
-    displayLName.style.backgroundColor = "green"
+    
     infobox.appendChild(displayLName);
 
     infoArea.appendChild(infobox);
-    
+
 }
 
 getItems();
