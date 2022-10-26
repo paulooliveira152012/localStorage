@@ -1,10 +1,12 @@
 var fnInput = document.querySelector("#fName");
 var lnInput = document.querySelector("#lName");
 var btn = document.querySelector("#submit-btn");
-var infoArea = document.querySelector("#names")
+var infoArea = document.querySelector("#names");
+var cleanBtn = document.querySelector("#clean-btn");
 var info = [];
 
 btn.addEventListener("click", function(e){
+
     e.preventDefault();
     
     info.push({fName: fnInput.value, lName: lnInput.value});
@@ -34,10 +36,12 @@ function getItems(){
     }
 }
 
+//making this variable global to be used on display() and clearBtn
+var infobox = document.createElement('div');
 
 function display(fname, lname) {
     
-    var infobox = document.createElement('div');
+    // var infobox = document.createElement('div');
     
     var displayFName = document.createElement('h3');
     displayFName.textContent = fname;
@@ -56,6 +60,14 @@ function display(fname, lname) {
     infoArea.appendChild(infobox);
 
 }
+
+    cleanBtn.addEventListener("click", function() {
+        if(info !== " ") {
+            localStorage.clear()
+            infobox.innerHTML = "";
+        }
+    })
+
 
 getItems();
 
