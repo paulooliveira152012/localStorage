@@ -3,23 +3,35 @@ var lnInput = document.querySelector("#lName");
 var btn = document.querySelector("#submit-btn");
 var infoArea = document.querySelector("#names");
 var cleanBtn = document.querySelector("#clean-btn");
+var title = document.querySelector("#title")
 var info = [];
 
+if(!localStorage.length) {
+    cleanBtn.style.display="none"
+    title.style.display= "none"
+}
+
 btn.addEventListener("click", function(e){
-
     e.preventDefault();
+
+    if(!fnInput.value || !lnInput.value) {
+        window.alert("can't leave any blank fields")
+    } else {
+        info.push({fName: fnInput.value, lName: lnInput.value});
     
-    info.push({fName: fnInput.value, lName: lnInput.value});
-
-    // console.log(info)
-
-    for(var i = 0; i < info.length; i++){
-        localStorage.setItem(i, JSON.stringify(info[i]))
+        // console.log(info)
+    
+        for(var i = 0; i < info.length; i++){
+            localStorage.setItem(i, JSON.stringify(info[i]))
+        }
+            display(fnInput.value, lnInput.value);
+    
+            fnInput.value = '';
+            lnInput.value = '';
+    
+            cleanBtn.style.display="block"
+            title.style.display= "block"
     }
-        display(fnInput.value, lnInput.value);
-
-        fnInput.value = '';
-        lnInput.value = '';
 })
 
 function getItems(){
@@ -62,11 +74,34 @@ function display(fname, lname) {
 }
 
     cleanBtn.addEventListener("click", function() {
+        cleanBtn.style.display="none"
         if(info !== " ") {
             localStorage.clear()
             infobox.innerHTML = "";
         }
-    })
+        title.style.display= "none"
+    });
+
+    // if(info == "") {
+    //     cleanBtn.style.display="none"
+    // } else {
+    //     cleanBtn.style.display="block"
+    // }
+
+    // if(infobox == ""){
+    //     console.log("empty")
+    // } else {
+    //     console.log("not empty")
+    // }
+
+    function render() {
+        
+    }
+
+    
+    // if(!localStorage.length) {
+    //     cleanBtn.style.display="none"
+    // }
 
 
 getItems();
