@@ -52,15 +52,6 @@ function getItems(){
 var infobox = document.createElement('div');
 
 function display(fname, lname) {
-    
-    // var infobox = document.createElement('div');
-    
-    var displayFName = document.createElement('h3');
-    displayFName.textContent = fname;
-
-    var displayLName = document.createElement('h3');
-    displayLName.textContent = lname;
-
     var fullName = document.createElement('p');
     fullName.style.marginBottom = 0;
     fullName.innerHTML = fname + ' ' + lname;
