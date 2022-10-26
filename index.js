@@ -82,27 +82,4 @@ function display(fname, lname) {
         title.style.display= "none"
     });
 
-    // if(info == "") {
-    //     cleanBtn.style.display="none"
-    // } else {
-    //     cleanBtn.style.display="block"
-    // }
-
-    // if(infobox == ""){
-    //     console.log("empty")
-    // } else {
-    //     console.log("not empty")
-    // }
-
-    function render() {
-        
-    }
-
-    
-    // if(!localStorage.length) {
-    //     cleanBtn.style.display="none"
-    // }
-
-
 getItems();
-
