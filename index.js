@@ -36,17 +36,22 @@ function getItems(){
 
 
 function display(fname, lname) {
+    
     var infobox = document.createElement('div');
+    
 
     var displayFName = document.createElement('h3');
     displayFName.textContent = fname;
+    displayFName.style.float = "left";
     infobox.appendChild(displayFName);
+
 
     var displayLName = document.createElement('h3');
     displayLName.textContent = lname;
-    infobox.appendChild(displayLName)
+    displayLName.style.backgroundColor = "green"
+    infobox.appendChild(displayLName);
 
-    infoArea.appendChild(infobox)
+    infoArea.appendChild(infobox);
     
 }
 
